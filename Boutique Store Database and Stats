@@ -1,0 +1,30 @@
+--Create a boutique store database
+
+CREATE TABLE boutique (id INTEGER PRIMARY KEY, name TEXT, section TEXT, price INTEGER, inventory INTEGER);
+
+INSERT INTO boutique VALUES (1, "Floral Blouse", "Tops", 49, 13);
+INSERT INTO boutique VALUES (2, "Beige Blazer", "Blazers", 55, 12);
+INSERT INTO boutique VALUES (3, "Stretchy Crewneck", "Tops", 42, 17);
+INSERT INTO boutique VALUES (4, "Jean Jacket", "Tops", 65, 11);
+INSERT INTO boutique VALUES (5, "Tunic Dress", "Dresses", 72, 12);
+INSERT INTO boutique VALUES (6, "Flared Jeans", "Bottoms", 62, 10);
+INSERT INTO boutique VALUES (7, "Black Skinny Jeans", "Bottoms", 40, 11);
+INSERT INTO boutique VALUES (8, "Embellished Jumpsuit", "Jumpsuits", 45, 17);
+INSERT INTO boutique VALUES (9, "Halter Midi Dress", "Dresses", 65, 11);
+INSERT INTO boutique VALUES (10, "Feather Halter Top", "Tops",47, 18);
+INSERT INTO boutique VALUES (11, "Puff-Sleeve Top", "Tops", 51, 11);
+INSERT INTO boutique VALUES (12, "Chiffon Dress", "Dresses", 57, 15);
+INSERT INTO boutique VALUES (13, "Pink Maxi Dress", "Dresses", 47, 12);
+INSERT INTO boutique VALUES (14,"Chiffon Top", "Tops", 39, 15);
+INSERT INTO boutique VALUES (15, "Draped Gown", "Dresses", 92, 7);
+
+
+--Display the database ordered by price. 
+SELECT * FROM boutique
+ORDER BY price desc; 
+
+--Display 5 items with the least amount of inventory. 
+SELECT name, price, inventory
+FROM boutique
+order by inventory asc
+limit 5; 
