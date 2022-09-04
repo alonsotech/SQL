@@ -1,0 +1,25 @@
+
+/* Card Games Results Data from https://gist.github.com/pamelafox/1ddbcb55f9ba1f6ec435#file-card_games_results-sql */
+
+--#In this SQL code, I'm querying a database that's holding data about different card games to answer questions about the data. 
+
+
+--#1. How many card games are in the database?
+Select Count(*) from card_games;
+
+--#2. What is the oldest batch of games played and what were the scores?
+select game_name, MIN(date_played) from card_games
+GROUP BY game_name, date_played
+ORDER BY date_played asc
+LIMIT 5;
+
+--#3. What were the five games with the lowest scores and who were the players?
+
+select game_name, player_name, MIN(score) from card_games
+Group By game_name, player_name, score
+Order by score asc
+Limit 5;
+
+--#4. List all the game titles in alphabetical order.
+select game_name from card_games
+ORDER BY game_name asc;
